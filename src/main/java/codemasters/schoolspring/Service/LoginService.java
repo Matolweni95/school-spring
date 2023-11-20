@@ -23,12 +23,13 @@ public class LoginService {
         User user = repo.findByEmail(loginRequest.getEmail());
         
         if (user != null && user.getPassword().equals(loginRequest.getPassword())) {
-            LoginResponse response = new LoginResponse(true, null, null, null);
+            LoginResponse response = new LoginResponse(true, null, null, null, null);
             response.setUserId(user.getUser_id());
             response.setName(user.getName());
+             response.setType(user.getType());
             return response;
         } else {
-            return new LoginResponse(false, null, null, null);
+            return new LoginResponse(false, null, null, null, null);
         }
     }
 }

@@ -5,13 +5,15 @@ public class LoginResponse  {
     private String message; 
     private Integer userId;
     private String name;
+    private String type;
 
 
-    public LoginResponse(boolean successful, String message, Integer userId, String name) {
+    public LoginResponse(boolean successful, String message, Integer userId, String name, String type) {
         this.successful = successful;
         this.message = message;
         this.userId = userId;
         this.name = name;
+        this.type = type;
     }
 
     public boolean isSuccessful() {
@@ -48,6 +50,14 @@ public class LoginResponse  {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
 }
