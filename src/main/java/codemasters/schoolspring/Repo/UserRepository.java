@@ -1,10 +1,16 @@
 package codemasters.schoolspring.Repo;
 
+import java.util.Optional;
+
 import org.springframework.data.repository.CrudRepository;
 
-import codemasters.schoolspring.Entity.User;
+import codemasters.schoolspring.Models.User;
 
-public interface UserRepository extends CrudRepository<User, Integer> {
-    User findByEmail(String email);
+
+
+public interface UserRepository extends CrudRepository<User, Long> {
+    Boolean existsByEmail(String email);
+    Optional<User> findByEmail(String email);
+
     
 }
