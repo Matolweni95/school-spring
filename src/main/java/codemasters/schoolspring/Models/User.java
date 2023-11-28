@@ -98,5 +98,12 @@ import jakarta.persistence.*;
         this.roles = roles;
     }
 
+    public Object getName() {
+        return null;
+    }
+
+    public void setName(Object name) {
+    }
+
 
 }
